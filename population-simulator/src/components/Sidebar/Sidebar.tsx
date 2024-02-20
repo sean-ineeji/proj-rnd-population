@@ -45,10 +45,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div
-      className="flex w-72 flex-col space-y-2 border-r-2 border-gray-200 bg-white p-2"
-      style={{ height: '90.5vh' }}
-    >
+    <div>
       <aside className="flex flex-col w-64 h-screen px-5 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
         {/* <a href="#">
         <img

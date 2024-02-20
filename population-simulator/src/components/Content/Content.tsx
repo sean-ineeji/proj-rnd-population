@@ -1,7 +1,14 @@
 import React from 'react';
+import BottomContent from './BottomContent';
+import TopContent from './TopContent';
 
-const content = () => {
-  return <div className="absolute inset-0 dark:border-gray-700">content</div>;
+const Content = () => {
+  return (
+    <div className="w-full h-dvh">
+      <TopContent />
+      <BottomContent />
+    </div>
+  );
 };
 
-export default content;
+export default Content;
