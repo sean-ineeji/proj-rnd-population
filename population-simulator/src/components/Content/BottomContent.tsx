@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import React from 'react';
+import schematic from '../../assets/img/schematic.png';
 
 const BottomContent = () => {
   return (
@@ -11,9 +13,20 @@ const BottomContent = () => {
         <div className="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px  mb-6"></div>
         <div
           className="chart-container"
-          style={{ position: 'relative', height: 150, width: '100%' }}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: 150,
+            width: '100%',
+            overflow: 'hidden',
+          }}
         >
-          <canvas id="usersChart"></canvas>
+          {/* <canvas id="usersChart"></canvas> */}
+          <img
+            src={schematic}
+            style={{ maxWidth: '100%', maxHeight: '100%' }}
+          />
         </div>
       </div>
       <div className="bg-white p-4 rounded-md">
