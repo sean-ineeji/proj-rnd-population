@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import tw from 'tailwind-styled-components';
 
 const Sidebar = () => {
@@ -44,61 +44,25 @@ const Sidebar = () => {
     사회통합: ['의료격차', '정보격차', '취약계층 생활불편', '노동의 차별'],
   };
 
-  const [visibleCategories, setVisibleCategories] = useState<
-    Record<string, boolean>
-  >({});
-  const toggleVisibility = (category: string) => {
-    setVisibleCategories((prevVisibleCategories) => ({
-      ...prevVisibleCategories,
-      [category]: !prevVisibleCategories[category],
-    }));
-  };
-
   return (
-    <div className="absolute inset-y-0 left-0  w-16">
+    <div>
       <aside className="flex flex-col w-64 h-screen px-5 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
-        {/* <a href="#">
-        <img
-          className="w-auto h-7"
-          src="https://merakiui.com/images/logo.svg"
-          alt=""
-        />
-      </a> */}
-
         <div className="flex flex-col justify-between flex-1 mt-6">
           <nav className="-mx-3 space-y-6 ">
             <div className="space-y-3 ">
               {Object.entries(issues).map(([category, subIssues]) => (
                 <div key={category}>
-                  {/* <label className="px-3 text-xs text-gray-500 uppercase dark:text-gray-400">
+                  <label className="px-3 text-xs text-gray-500 uppercase dark:text-gray-400">
                     {category}
-                  </label> */}
-                  <button
-                    className="px-3 text-xs text-gray-500 uppercase dark:text-gray-400"
-                    onClick={() => toggleVisibility(category)}
-                  >
-                    {category}
-                  </button>
-                  {/* {subIssues.map((subIssue) => (
+                  </label>
+                  {subIssues.map((subIssue) => (
                     <button
                       className="w-full flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
                       key={subIssue}
                     >
                       <p className="mx-2 text-sm font-medium">{subIssue}</p>
                     </button>
-                  ))} */}
-                  {visibleCategories[category] && (
-                    <div>
-                      {subIssues.map((subIssue) => (
-                        <button
-                          className="w-full flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
-                          key={subIssue}
-                        >
-                          <p className="mx-2 text-sm font-medium">{subIssue}</p>
-                        </button>
-                      ))}
-                    </div>
-                  )}
+                  ))}
                 </div>
               ))}
             </div>
