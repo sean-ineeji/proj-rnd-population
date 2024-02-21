@@ -3,3 +3,8 @@
   color: rgba(0, 0, 0, 0.25); /* Change color to indicate disabled state */
   cursor: not-allowed; /* Change cursor to indicate disabled state */
 }
+
+.sidebar-container {
+  height: 100vh; /* Set height to 100% of viewport height */
+  overflow-y: auto; /* Enable vertical scrolling */
+}

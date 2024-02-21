@@ -220,14 +220,16 @@ const Sidebar: React.FC = () => {
   };
 
   return (
-    <Menu
-      mode="inline"
-      openKeys={openKeys}
-      onOpenChange={onOpenChange}
-      style={{ width: 256, height: '100%' }}
-      items={items}
-      theme="dark"
-    />
+    <div className="sidebar-container">
+      <Menu
+        mode="inline"
+        openKeys={openKeys}
+        onOpenChange={onOpenChange}
+        style={{ width: 256, height: '100%' }}
+        items={items}
+        theme="dark"
+      />
+    </div>
   );
 };
 
