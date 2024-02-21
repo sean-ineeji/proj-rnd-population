@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import React from 'react';
 import schematic from '../../assets/img/schematic.png';
+import PolicyCheck from 'components/PolicyCheck/PolicyCheck';
 
 const BottomContent = () => {
   useEffect(() => {
@@ -50,7 +51,7 @@ const BottomContent = () => {
           className="chart-container"
           style={{ position: 'relative', height: 150, width: '100%' }}
         >
-          <canvas id="commercesChart"></canvas>
+          <PolicyCheck />
         </div>
       </div>
     </div>
