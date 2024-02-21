@@ -26,7 +26,17 @@ const BottomContent = () => {
         </h2>
         <div className="my1-"></div>
         <div className="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
-        <div className="chart-container">
+        <div
+          className="chart-container"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: 150,
+            width: '100%',
+            overflow: 'hidden',
+          }}
+        >
           <canvas id="usersChartBottom"></canvas>
         </div>
       </div>
