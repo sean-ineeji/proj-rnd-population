@@ -14,7 +14,7 @@ const TopContent = () => {
           className="chart-container"
           style={{ position: 'relative', height: 150, width: '100%' }}
         >
-          <canvas id="usersChart"></canvas>
+          <canvas id="usersChartTop"></canvas>
         </div>
       </div>
     </div>

@@ -1,6 +1,23 @@
+import { useEffect } from 'react';
 import React from 'react';
+import schematic from '../../assets/img/schematic.png';
 
 const BottomContent = () => {
+  useEffect(() => {
+    const canvas = document.getElementById(
+      'usersChartBottom',
+    ) as HTMLCanvasElement | null;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const img = new Image();
+    img.onload = () => {
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    };
+    img.src = schematic;
+  }, []);
+
   return (
     <div className="grid grid-cols-2 md:grid-cols-2 gap-5 p-4 h-1/3">
       <div className="bg-white p-4 rounded-md">
@@ -8,12 +25,19 @@ const BottomContent = () => {
           도식화 이미지
         </h2>
         <div className="my1-"></div>
-        <div className="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px  mb-6"></div>
+        <div className="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
         <div
           className="chart-container"
-          style={{ position: 'relative', height: 150, width: '100%' }}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: 150,
+            width: '100%',
+            overflow: 'hidden',
+          }}
         >
-          <canvas id="usersChart"></canvas>
+          <canvas id="usersChartBottom"></canvas>
         </div>
       </div>
       <div className="bg-white p-4 rounded-md">
