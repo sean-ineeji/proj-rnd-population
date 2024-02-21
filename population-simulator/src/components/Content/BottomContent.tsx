@@ -1,24 +1,7 @@
-import { useEffect } from 'react';
-import React from 'react';
-import schematic from '../../assets/img/schematic.png';
 import PolicyCheck from 'components/PolicyCheck/PolicyCheck';
+import Schematic from 'components/Schematic/Schematic';
 
 const BottomContent = () => {
-  useEffect(() => {
-    const canvas = document.getElementById(
-      'usersChartBottom',
-    ) as HTMLCanvasElement | null;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const img = new Image();
-    img.onload = () => {
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-    };
-    img.src = schematic;
-  }, []);
-
   return (
     <div className="grid grid-cols-2 md:grid-cols-2 gap-5 p-4 h-1/3">
       <div className="bg-white p-4 rounded-md">
@@ -38,7 +21,7 @@ const BottomContent = () => {
             overflow: 'hidden',
           }}
         >
-          <canvas id="usersChartBottom"></canvas>
+          <Schematic />
         </div>
       </div>
       <div className="bg-white p-4 rounded-md">
