@@ -1,7 +1,19 @@
 import React, { useState } from 'react';
 // eslint-disable-next-line
 import tw from 'tailwind-styled-components';
-import { AppstoreOutlined } from '@ant-design/icons';
+import {
+  HeartFilled,
+  EnvironmentFilled,
+  ZhihuSquareFilled,
+  SafetyCertificateFilled,
+  SunFilled,
+  CarFilled,
+  BookFilled,
+  AppstoreOutlined,
+  RedditCircleFilled,
+  HomeFilled,
+  ThunderboltFilled,
+} from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
 import './Sidebar.css';
@@ -31,7 +43,7 @@ const items: MenuItem[] = [
   getItem(
     '건강',
     'sub1',
-    <AppstoreOutlined />,
+    <HeartFilled />,
     [
       getItem('만성질환', '1', undefined, undefined, true),
       getItem('희귀난치성', '2', undefined, undefined, true),
@@ -46,7 +58,7 @@ const items: MenuItem[] = [
   getItem(
     '환경',
     'sub2',
-    <AppstoreOutlined />,
+    <EnvironmentFilled />,
     [
       getItem('생활폐기물', '6', undefined, undefined, true),
       getItem('실내 공기오염', '7', undefined, undefined, true),
@@ -63,7 +75,7 @@ const items: MenuItem[] = [
   getItem(
     '문화여가',
     'sub3',
-    <AppstoreOutlined />,
+    <ZhihuSquareFilled />,
     [
       getItem('문화소외', '13', undefined, undefined, true),
       getItem('문화 - 여가공간 미비', '14', undefined, undefined, true),
@@ -75,7 +87,7 @@ const items: MenuItem[] = [
   getItem(
     '생활안전',
     'sub4',
-    <AppstoreOutlined />,
+    <SafetyCertificateFilled />,
     [
       getItem('성범죄', '15', undefined, undefined, true),
       getItem('먹거리 안전', '16', undefined, undefined, true),
@@ -92,7 +104,7 @@ const items: MenuItem[] = [
   getItem(
     '재난재해',
     'sub5',
-    <AppstoreOutlined />,
+    <ThunderboltFilled />,
     [
       getItem('기상재해', '22', undefined, undefined, true),
       getItem('화학사고', '23', undefined, undefined, true),
@@ -108,7 +120,7 @@ const items: MenuItem[] = [
   getItem(
     '에너지',
     'sub6',
-    <AppstoreOutlined />,
+    <SunFilled />,
     [
       getItem('전력수급', '28', undefined, undefined, true),
       getItem('에너지 빈곤', '29', undefined, undefined, true),
@@ -120,7 +132,7 @@ const items: MenuItem[] = [
   getItem(
     '주거교통',
     'sub7',
-    <AppstoreOutlined />,
+    <CarFilled />,
     [
       getItem('불량/노후 주택', '30', undefined, undefined, true),
       getItem('교통 혼잡', '31', undefined, undefined, true),
@@ -133,7 +145,7 @@ const items: MenuItem[] = [
   getItem(
     '가족',
     'sub8',
-    <AppstoreOutlined />,
+    <HomeFilled />,
     [
       getItem('노인 소외 - 자살', '33', undefined, undefined, true),
       getItem('가정폭력', '34', undefined, undefined, true),
@@ -146,7 +158,7 @@ const items: MenuItem[] = [
   getItem(
     '교육',
     'sub9',
-    <AppstoreOutlined />,
+    <BookFilled />,
     [
       getItem('교육격차', '36', undefined, undefined, true),
       getItem('학교폭력', '37', undefined, undefined, true),
@@ -158,7 +170,7 @@ const items: MenuItem[] = [
   getItem(
     '사회통합',
     'sub10',
-    <AppstoreOutlined />,
+    <RedditCircleFilled />,
     [
       getItem('의료격차', '38', undefined, undefined, false),
       getItem(
