@@ -1,33 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from 'antd';
+import { AppstoreOutlined } from '@ant-design/icons';
+import type { MenuProps } from 'antd';
+import { Menu } from 'antd';
 
-const policy_library = {
-  가족: ['20xx년 서울시 출산장려정책', '19xx년 대한민국 출산장려정책'],
-  환경: ['2022년 유럽 미세먼지 정책'],
-};
+type MenuItem = Required<MenuProps>['items'][number];
 
-const PolicyCheck = () => {
+function getItem(
+  label: React.ReactNode,
+  key: React.Key,
+  icon?: React.ReactNode,
+  children?: MenuItem[],
+  type?: 'group',
+): MenuItem {
+  return {
+    key,
+    icon,
+    children,
+    label,
+    type,
+  } as MenuItem;
+}
+
+const items: MenuItem[] = [
+  getItem('가족', 'sub1', <AppstoreOutlined />, [
+    getItem('20xx년 서울시 출산장려정책', '1'),
+    getItem('19xx년 대한민국 출산장려정책', '2'),
+  ]),
+  getItem('환경', 'sub2', <AppstoreOutlined />, [
+    getItem('2022년 유럽 미세먼지 정책', '3'),
+  ]),
+];
+
+const rootSubmenuKeys = ['sub1', 'sub2'];
+
+const PolicyCheck: React.FC = () => {
+  const [openKeys, setOpenKeys] = useState(['sub1']);
+
+  const onOpenChange: MenuProps['onOpenChange'] = (keys) => {
+    const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
+    if (latestOpenKey && rootSubmenuKeys.indexOf(latestOpenKey!) === -1) {
+      setOpenKeys(keys);
+    } else {
+      setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
+    }
+  };
+
   return (
-    <div>
-      {Object.entries(policy_library).map(([issue, policies]) => (
-        <div key={issue}>
-          <label className="px-3 text-xs text-gray-500 uppercase dark:text-gray-400">
-            {issue}
-          </label>
-          {policies.map((policy) => (
-            <button
-              className="w-full flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
-              key={policy}
-            >
-              <p className="mx-2 text-sm font-medium">{policy}</p>
-            </button>
-          ))}
-        </div>
-      ))}
-      <div style={{ textAlign: 'center' }}>
-        <Button type="default">결과보기</Button>
-      </div>
-    </div>
+    <Menu
+      mode="inline"
+      openKeys={openKeys}
+      onOpenChange={onOpenChange}
+      items={items}
+    />
   );
 };
 
