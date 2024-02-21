@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'antd';
 
 const policy_library = {
   가족: ['20xx년 서울시 출산장려정책', '19xx년 대한민국 출산장려정책'],
@@ -24,7 +25,7 @@ const PolicyCheck = () => {
         </div>
       ))}
       <div style={{ textAlign: 'center' }}>
-        <button>결과보기</button>
+        <Button type="default">결과보기</Button>
       </div>
     </div>
   );
