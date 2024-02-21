@@ -41,7 +41,7 @@ const Schematic = () => {
   const imageUrl = '../../assets/img/schematic.png';
 
   return (
-    <div>
+    <div style={{ cursor: 'pointer' }}>
       <canvas id="usersChartBottom" onClick={showModal}></canvas>
       <Modal
         visible={visible}
