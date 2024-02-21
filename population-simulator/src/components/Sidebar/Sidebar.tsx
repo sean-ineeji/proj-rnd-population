@@ -9,7 +9,6 @@ import {
   SunFilled,
   CarFilled,
   BookFilled,
-  AppstoreOutlined,
   RedditCircleFilled,
   HomeFilled,
   ThunderboltFilled,
