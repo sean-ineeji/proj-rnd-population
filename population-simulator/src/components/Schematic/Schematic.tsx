@@ -44,10 +44,10 @@ const Schematic = () => {
     <div style={{ cursor: 'pointer' }}>
       <canvas id="usersChartBottom" onClick={showModal}></canvas>
       <Modal
-        visible={visible}
+        open={visible}
         footer={null}
         onCancel={handleCancel}
-        bodyStyle={{ padding: 0 }}
+        style={{ padding: 0 }}
         centered
       >
         <img src={schematic} className="popup-image" />
