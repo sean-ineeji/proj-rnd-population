@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Sidebar from 'components/Sidebar/Sidebar';
 import Content from 'components/Content/Content';
+import SimulationMap from 'components/Content/Visualization/SimulationMap';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <div className="flex-1 flex" style={{ height: '90.5vh' }}>
         <Sidebar />
         <Content />
+        {/* <SimulationMap /> */}
       </div>
     </main>
   );
